@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <form action="/Home/PostRequest" method="post">
+        <input type="number" name="Age"/>
+            <br />
+        <input type="text" name="Currency"/>
+            <br />
+        <input type="date" name="StartDate"/>
+            <br />
+        <input type="date"  name="EndDate" />
+            <br />
+            <br />
+
+        <input type="submit" value="Submit" action="/Home/PostRequest" />
+        </form>
+
+        @if(@ViewBag.Data != null){
+            <h1>Total:</h1> @ViewBag.Data.Total
+            <br />
+            <h1>Currency:</h1> @ViewBag.Data.Currency
+            <br />
+            <h1>Quotation Id:</h1> @ViewBag.Data.QuotationId
+
+        }
+        
+</div>
